@@ -1,0 +1,8 @@
+venv
+.vscode
+.gitignore
+.git
+rsync-ignore.txt
+README.md
+redeployToRaspPi.sh
+IlmaWebApp/__pycache__

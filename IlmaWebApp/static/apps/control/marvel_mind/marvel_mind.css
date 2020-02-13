@@ -1,0 +1,24 @@
+#marvelmindTable {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    empty-cells: hide;
+}
+
+#marvelmindTable td {
+    padding: 1rem;
+    user-select: none;
+    font-size: 12vw;
+}
+
+@media screen and (min-width: 1200px) {
+    #marvelmindTable td {
+        font-size: 95px;
+    }
+}
+
+#marvelmindTable .direction, #marevlmindTable .genericButton {
+    text-align: center;
+    cursor: pointer;
+}

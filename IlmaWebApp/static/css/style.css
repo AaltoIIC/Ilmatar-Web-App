@@ -1,0 +1,160 @@
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+         local('MaterialIcons-Regular'),
+         url(iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+         url(iconfont/MaterialIcons-Regular.woff) format('woff'),
+         url(iconfont/MaterialIcons-Regular.ttf) format('truetype');
+}
+ 
+.material-icons {
+   font-family: 'Material Icons';
+   font-weight: normal;
+   font-style: normal;
+   font-size: 24px;  /* Preferred icon size */
+   display: inline-block;
+   line-height: 1;
+   text-transform: none;
+   letter-spacing: normal;
+   word-wrap: normal;
+   white-space: nowrap;
+   direction: ltr;
+ 
+   /* Support for all WebKit browsers. */
+   -webkit-font-smoothing: antialiased;
+   /* Support for Safari and Chrome. */
+   text-rendering: optimizeLegibility;
+   /* Support for Firefox. */
+   -moz-osx-font-smoothing: grayscale;
+   /* Support for IE. */
+   font-feature-settings: 'liga';
+}
+
+:root{
+    --blue:#007bff;
+    --indigo:#6610f2;
+    --purple:#6f42c1;
+    --pink:#e83e8c;
+    --red:#dc3545;
+    --orange:#fd7e14;
+    --yellow:#ffc107;
+    --green:#28a745;
+    --teal:#20c997;
+    --cyan:#17a2b8;
+    --white:#fff;
+    --gray:#6c757d;
+    --gray-dark:#121212;
+    --primary:#ffffff;
+    --secondary:#6c757d;
+    --success:#28a745;
+    --info:#17a2b8;
+    --warning:#ffc107;
+    --danger:#dc3545;
+    --light:#f8f9fa;
+
+    --background: #121212;
+    --primary: rgba(0,255,255,0.6);
+    --danger: lightcoral;
+    --dropdown-background: #262626;
+
+    --font: #ffffff;
+}
+
+.dark{
+    background-color: var(--background);
+}
+.opacity5{
+    background-color: rgba(255,255,255,0.05);
+}
+.opacity8{
+    background-color: rgba(255,255,255,0.08);
+}
+.btn-clr{
+    background-color: var(--primary) !important;
+}
+.dngr-clr{
+    background-color: var(--danger) !important;
+}
+
+button {
+    color: var(--font) !important;
+    background-color: var(--primary) !important;
+    font-weight: bold !important;
+}
+
+#content > div {
+    min-width: 45%;
+}
+
+html {
+    font-size: 0.9rem;
+}
+
+@media screen and (min-width: 576px) {
+    html {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    html {
+        font-size: 1.6rem;
+    }
+}
+
+#titleDiv h1, h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    padding: 0.3rem;
+}
+body {
+    min-width: 300px;
+    color: var(--font);
+}
+
+.dropdown-menu {
+    background-color: var(--dropdown-background);
+}
+.dropdown-menu > a{
+    color: var(--font);
+    background-color: var(--dropdown-background);
+    cursor: pointer;
+}
+.dropdown-item:hover, .dropdown-item:active {
+    background-color: var(--primary);
+}
+
+#readingControl {
+    width: 1.4rem;
+    height: 1.4rem;
+    border: 2px solid var(--border-color);
+    border-radius: 1rem;
+}
+.readingControl {
+    border-color: var(--success) !important;
+}
+.notReadingControl {
+    border-color: var(--danger) !important;
+}
+
+#githubLink {
+    color: var(--font);
+    text-decoration: none;
+    cursor: pointer
+}
+
+#githubLink:hover {
+    color: var(--font);
+    background-color: var(--primary);
+    text-decoration: none;
+    cursor: pointer
+}

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <!-- Meta tags -->
+        <meta charset="utf-8">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+        <!-- Favicon and Bootstrap CSS-->
+        <link
+            rel="icon"
+            type="image/png"
+            href="{{ url_for('static', filename='favicon/favicon.png') }}"
+            sizes="96x96">
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/style.css') }}">
+        
+        <!-- jQuery and background scripts-->
+        <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/script_loader.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/control_manager.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/watchdog.js') }}"></script>
+
+        <!-- csrf token and URL to Ilmatar's GraphQL API-->
+        <script type="text/javascript">
+            var csrf_token = "{{ csrf_token() }}";
+            var apiUrl = "http://192.168.0.77/graphql";
+            //var apiUrl = "http://localhost:8000/graphql";
+        </script>
+
+        <title>Ilmatar Web App</title>
+
+    </head>
+    <body class="p-1 dark">
+
+        <div id="titleDiv" class="m-1 p-1 rounded opacity8 d-flex shadow">
+            <h1 class="mr-auto">Ilmatar Web App</h1>
+            <a 
+                id="githubLink"
+                href="https://version.aalto.fi/gitlab/hietalj3/ilmatar-web-app"
+                class="align-self-center btn rounded opacity8">
+                GitHub
+            </a>
+        </div>
+
+        <div id="content" class="row m-1 shadow">
+            <div class="col-xl mt-2 p-0 opacity8 rounded">
+
+                <!-- Monitoring nav -->
+                <div
+                    id="monitorNav"
+                    class="typeNav container-fluid d-flex p-1 border-bottom rounded opacity8 shadow">
+                    <h2 id="monitoredApp" class="mr-auto">Monitor</h2>
+                    <!-- Monitoring apps dropwdown -->
+                    <div class="dropdown show">
+                        <button
+                            class="btn dropdown-toggle"
+                            type="button"
+                            id="dropdownMenuButton"
+                            data-toggle="dropdown">
+                            Monitor app
+                        </button>
+                        <div
+                            class="dropdown-menu dropdown-menu-right shadow">
+                            {% for script in monitorScripts %}
+                                <a class="monitorApp dropdown-item">
+                                    {{ script|capitalize }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monitoring app container -->
+                <div id="monitor" class="container-fluid p-2 border-top-0"></div>
+
+            </div>
+            <div class="col-xl mt-2 p-0 opacity8 rounded">
+
+                <!-- Control nav -->
+                <div
+                    id="controlNav"
+                    class="typeNav container-fluid d-flex p-1 border-bottom rounded opacity8 shadow">
+                    <h2 id="controlHeader" class="mr-auto">Control</h2>
+                    <h2 id="controlledApp" class="mr-auto d-none">Control</h2>
+                    <!-- Reading controls indicator -->
+                    <div class="align-self-center mr-3">
+                        <div id="readingControl" class="d-none dngr-clr"></div>
+                    </div>
+                    <!-- Request control form -->
+                    <div id="requestControl" class="d-flex">
+                        <input 
+                            id="accessCode"
+                            type="password"
+                            class="form-control mr-2"
+                            placeholder="Access Code">
+                        <button
+                            id="submitControlRequest"
+                            class="btn btn-clr text-nowrap">
+                            Control
+                        </button>
+                    </div>
+                    <!-- Release control button -->
+                    <button
+                        id="releaseControl"
+                        class="btn dngr-clr text-nowrap mr-2 d-none">
+                        Stop
+                    </button>
+                    <!-- Control apps dropdown -->
+                    <div id="controlDropdown" class="dropdown show d-none">
+                        <button
+                            class="btn btn-clr dropdown-toggle"
+                            type="button"
+                            id="dropdownMenuButton"
+                            data-toggle="dropdown">
+                            App
+                        </button>
+                        <div
+                            class="dropdown-menu dropdown-menu-right shadow">
+                            {% for script in controlScripts %}
+                                <a class="controlApp dropdown-item">
+                                    {{ script|capitalize }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div 
+                    id="controlRequestAlert"
+                    class="d-none p-2 border border-top-0 rounded notReadingControl">
+                    Unable to get control. Another client has control.
+                </div>
+
+                <!-- Control app container -->
+                <div
+                    id="control"
+                    class="container-fluid p-2 border border-top-0 rounded d-none notReadingControl">
+                </div>
+
+            </div>
+        </div>
+
+        <script
+            src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}">
+        </script>
+    
+    </body>
+</html>

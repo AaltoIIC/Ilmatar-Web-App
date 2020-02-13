@@ -1,0 +1,14 @@
+
+.loader {
+    border: 0.5rem solid rgba(0,0,0,0);
+    border-top: 0.5rem solid var(--primary);
+    border-bottom: 0.5rem solid var(--primary);
+    border-radius: 50%;
+    width: 1.8rem;
+    height: 1.8rem;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
