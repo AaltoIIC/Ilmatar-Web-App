@@ -5,6 +5,8 @@ Web application backend built with [Flask](https://www.palletsprojects.com/p/fla
 Built to work with [Ilmatar HTTP Wrapper](https://github.com/AaltoIIC/OPC-UA-GraphQL-Wrapper) -GraphQL API.
 
 ## Introduction
+![Image of User Interface](/ui_picture.png)
+
 An user interface designed for the Ilmatar crane. The web app distributes small independent JavaScript applications found in the server static files. The JavaScript apps can use data from the Ilmatar OPC UA server via the GraphQL API, or from any web accessible resources.
 
 For now, JavaScript apps are divided to monitor scripts and control scripts. Monitor scripts can show data to the user by monitoring sensor values or devices such as the on-crane web camera. Control scripts can control the crane in various ways. Additional scripts can be created and integrated to the web app.
@@ -28,7 +30,7 @@ pip install -r requirements.txt
 ```
 
 #### Setup
-Change apiUrl variable in **IlmaWebApp\templates\index.html** to the Ilmatar's GraphQL API URL if necessary.
+Change apiUrl variable in [IlmaWebApp\templates\index.html](https://github.com/AaltoIIC/Ilmatar-Web-App/blob/master/IlmaWebApp/templates/index.html) to the Ilmatar's GraphQL API URL if necessary.
 
 ```
 var apiUrl = "http://192.168.0.77/graphql";
@@ -75,7 +77,7 @@ A good guide on deploying the app can be found from
 [Here](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04)
 
 ## Redeploying the flask app to (existing) Raspberry Pi server
-Use Ubuntu bash to run [redeployToRaspPi.sh](https://version.aalto.fi/gitlab/hietalj3/ilmatar-web-app/blob/master/redeployToRaspPi.sh) script (Don't move the script from its location).
+Use Ubuntu bash to run [redeployToRaspPi.sh](https://github.com/AaltoIIC/Ilmatar-Web-App/blob/master/redeployToRaspPi.sh) script (Don't move the script from its location).
 You may need to adjust the script if starting your own Raspberry Pi server, instead of the one already configured for Ilmatar.
 
 You need to be connected to the Ilmatar network.
